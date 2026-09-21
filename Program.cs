@@ -5,7 +5,6 @@ namespace StudentReg
 {
     class Program
     {
-        public static List<Students> AllStudent = new List<Students>();
         static void Main(string[] args)
         {
             StudentService studentService = new StudentService();
@@ -26,8 +25,9 @@ namespace StudentReg
                     case "1": // registration
                         studentService.RegisterStudent();
                         break;
-                    case "2": // Edit info
 
+                    case "2": // Edit info
+                        studentService.EditStudent();
                         break;
                         
                     case "3": // Check info

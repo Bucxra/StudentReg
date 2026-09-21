@@ -22,5 +22,38 @@ namespace StudentReg.Services
             Console.WriteLine("\nStudent Added\n");
 
         }
+        public void EditStudent()
+        {
+            Console.WriteLine("Enter Your ID");
+            long id = long.Parse(Console.ReadLine());
+
+            Students student = AllStudents.FirstOrDefault(x => x.Id == id);
+
+            if (student == null) { Console.WriteLine("Student Not Found"); return; }
+
+            Console.WriteLine("1.Edit Name");
+            Console.WriteLine("1.Edit Gpi");
+            Console.WriteLine("1.Edit Email");
+            Console.WriteLine("Choose:");
+            string? option = Console.ReadLine();
+
+            switch (option)
+            {
+                case "1":
+                    Console.WriteLine("Enter your Name");
+                    student.Name = Console.ReadLine();
+                    break;
+                case "2":
+                    Console.WriteLine("Enter your Gpi");
+                    student.Gpi = Convert.ToDecimal(Console.ReadLine());
+                    break;
+                case "3":
+                    Console.WriteLine("Enter your Email");
+                    student.Email = Console.ReadLine();
+                    break;
+
+            }
+            Console.WriteLine("Information updated!");
+        }
     }
 }
