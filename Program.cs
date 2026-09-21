@@ -1,4 +1,5 @@
 ﻿using StudentReg.Models;
+using StudentReg.Services;
 
 namespace StudentReg
 {
@@ -7,6 +8,8 @@ namespace StudentReg
         public static List<Students> AllStudent = new List<Students>();
         static void Main(string[] args)
         {
+            StudentService studentService = new StudentService();
+
             while (true)
             {
                 Console.WriteLine("Student Registration");
@@ -16,24 +19,23 @@ namespace StudentReg
                 Console.WriteLine("4. Exit");
 
                 Console.WriteLine("\nChoose:");
-                string? opn;
-                opn = Console.ReadLine();
+                string? opn = Console.ReadLine();
 
                 switch (opn)
                 {
                     case "1": // registration
-
+                        studentService.RegisterStudent();
                         break;
-                    case "2":
+                    case "2": // Edit info
 
                         break;
                         
-                    case "3":
+                    case "3": // Check info
 
                         break;
 
-                    case "4":
-
+                    case "4": // Exit
+                    Environment.Exit(1);
                         break;
                 }
 
