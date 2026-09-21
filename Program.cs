@@ -31,10 +31,11 @@ namespace StudentReg
                         break;
                         
                     case "3": // Check info
-
+                        studentService.CheckInfo();
                         break;
 
                     case "4": // Exit
+                    Console.WriteLine("Bye :)");
                     Environment.Exit(1);
                         break;
                 }
